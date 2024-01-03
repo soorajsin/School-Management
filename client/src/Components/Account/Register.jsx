@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./Mix.css";
 import { NavLink } from "react-router-dom";
+import apiURL from "../config";
 
 const Register = () => {
+  const api = apiURL.url;
   const [sendData, setSendData] = useState({
     uname: "",
     email: "",
@@ -42,7 +44,18 @@ const Register = () => {
     } else {
       console.log("done");
 
-      
+      // const backend = api;
+      // console.log(backend);
+      const data = await fetch(`${api}/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ sendData }),
+      });
+
+      const res = await data.json();
+      console.log(res);
     }
   };
 

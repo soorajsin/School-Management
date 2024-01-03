@@ -1,12 +1,22 @@
 const express = require("express");
 const app = express();
-const port = 4000 || process.env.port;
 require("./DB/Connection");
+const cors = require("cors");
+const router = require("./Router/Route");
+const port = process.env.PORT || 5000;
+
 
 
 app.get("/", (req, res) => {
-          res.send("Hello, server")
+          res.status(400).json({
+                    message: "Welcome to the Server"
+          })
 })
+
+
+app.use(express.json());
+app.use(cors());
+app.use(router);
 
 
 app.listen(port, () => {
