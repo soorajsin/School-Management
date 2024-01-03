@@ -1,7 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Mix.css";
+import { NavLink } from "react-router-dom";
 
 const Register = () => {
+  const [sendData, setSendData] = useState({
+    uname: "",
+    email: "",
+    password: "",
+    cpassword: "",
+  });
+
+  const changeData = (e) => {
+    setSendData({
+      ...sendData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  console.log(sendData);
+
+  const submitRegister = async (e) => {
+    e.preventDefault();
+
+    const { uname, email, password, cpassword } = sendData;
+    if (uname === "") {
+      alert("Please enter username");
+    } else if (email === "") {
+      alert("Please enter your email ...");
+    } else if (!email.includes("@")) {
+      alert("Invalid Email, with @");
+    } else if (password === "") {
+      alert("please enter the Password");
+    } else if (password.length < 6) {
+      alert("Password should be at least 6 characters long!");
+    } else if (cpassword === "") {
+      alert("Confirm your password");
+    } else if (cpassword.length < 6) {
+      alert("Confirm password should be at least 6 characters long!");
+    } else if (password !== cpassword) {
+      alert("Both passwords are not same.");
+    } else {
+      console.log("done");
+
+      
+    }
+  };
+
   return (
     <>
       <div className="register">
@@ -9,21 +53,39 @@ const Register = () => {
           <h1>Welcome to Register</h1>
           <br />
           <div className="boxregister">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="uname">Name</label>
             <br />
-            <input type="text" placeholder="Enter your name ..." />
+            <input
+              type="text"
+              name="uname"
+              value={sendData.uname}
+              onChange={changeData}
+              placeholder="Enter your name ..."
+            />
           </div>
           <br />
           <div className="boxregister">
             <label htmlFor="email">Email</label>
             <br />
-            <input type="email" placeholder="Enter your email ..." />
+            <input
+              type="email"
+              name="email"
+              value={sendData.email}
+              onChange={changeData}
+              placeholder="Enter your email ..."
+            />
           </div>
           <br />
           <div className="boxregister">
             <label htmlFor="password">Password</label>
             <br />
-            <input type="password" placeholder="Enter your password ..." />
+            <input
+              type="password"
+              name="password"
+              value={sendData.password}
+              onChange={changeData}
+              placeholder="Enter your password ..."
+            />
           </div>
           <br />
           <div className="boxregister">
@@ -31,16 +93,24 @@ const Register = () => {
             <br />
             <input
               type="password"
+              name="cpassword"
+              value={sendData.cpassword}
+              onChange={changeData}
               placeholder="Enter your confirm password ..."
             />
           </div>
           <br />
           <div className="boxregister">
-            <button>Register</button>
+            <button onClick={submitRegister}>Register</button>
           </div>
           <br />
           <div className="boxregister">
-            <p>Have Already Account? Login</p>
+            <p>
+              Have Already Account?{" "}
+              <NavLink to={"/"} className={"registerlink"}>
+                Login
+              </NavLink>
+            </p>
           </div>
         </div>
       </div>

@@ -1,11 +1,13 @@
 import React from "react";
+import "./Mix.css";
+import { NavLink } from "react-router-dom";
 
 const Register = () => {
   return (
     <>
       <div className="register">
         <div className="container">
-          <h1>Welcome to Login</h1>
+          <h1 className="h1handle">Welcome to Login</h1>
           <br />
           <div className="boxregister">
             <label htmlFor="email">Email</label>
@@ -24,7 +26,12 @@ const Register = () => {
           </div>
           <br />
           <div className="boxregister">
-            <p>Have not Account? Register</p>
+            <p>
+              Have not Account?{" "}
+              <NavLink to={"/register"} className={"registerlink"}>
+                Register
+              </NavLink>
+            </p>
           </div>
         </div>
       </div>

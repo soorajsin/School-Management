@@ -10,7 +10,7 @@
 }
 
 .register .container {
-          width: 600px;
+          width: 550px;
           margin: auto;
           background-color: #fff;
           border-radius: 10px;
@@ -28,11 +28,16 @@
           font-size: 30px;
           margin-left: 50px;
           transition: 0.3s ease;
+          margin-bottom: 40px;
 }
 
 .register .container:hover h1 {
           color: #d43757;
           text-shadow: 0 0 10px;
+}
+
+.register .container .h1handle {
+          word-spacing: 75px;
 }
 
 .register .container .boxregister {
@@ -80,4 +85,15 @@
 .register .container .boxregister p {
           font-size: 20px;
           word-spacing: 2px;
+}
+
+.register .container .boxregister p .registerlink {
+          font-size: 20px;
+          transition: 0.3s ease;
+}
+
+.register .container .boxregister p .registerlink:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          color: #d43757;
 }
