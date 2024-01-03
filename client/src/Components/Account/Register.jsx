@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./Mix.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import apiURL from "../config";
 
 const Register = () => {
+  const history = useNavigate();
+
   const api = apiURL.url;
   const [sendData, setSendData] = useState({
     uname: "",
@@ -51,11 +53,20 @@ const Register = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ sendData }),
+        body: JSON.stringify({ uname, email, password, cpassword }),
       });
 
       const res = await data.json();
-      console.log(res);
+      // console.log(res);
+
+      if (res.status === 201) {
+        console.log(res);
+        history("/");
+      } else if (res.status === 202) {
+        alert("User Already Exist");
+      } else {
+        console.log("network error");
+      }
     }
   };
 
