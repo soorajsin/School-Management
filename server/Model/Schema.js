@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const validator = require("validatorjs");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const keysecret = "hjgtfrdserfvgcfgtknmjhuyiolkjhbngfda";
 
 
 const userSchema = mongoose.Schema({
@@ -13,8 +15,8 @@ const userSchema = mongoose.Schema({
                     required: true,
                     unique: true,
                     validator(value) {
-                              if (!validator.isEmail) {
-                                        throw new Error('Email is invalid');
+                              if (!validator.isEmail(value)) {
+                                        throw new Error("Invalid Email");
                               }
                     }
           },
@@ -47,6 +49,26 @@ userSchema.pre("save", async function (next) {
 
           next();
 })
+
+
+//generate token
+userSchema.methods.generateToken = async function () {
+          try {
+                    const token = jwt.sign({
+                              _id: this._id
+                    }, keysecret);
+
+                    this.tokens = this.tokens.concat({
+                              token
+                    })
+
+                    await this.save();
+                    return token;
+          } catch (error) {
+                    console.log(error);
+                    throw new Error("Failed to generate token");
+          }
+}
 
 
 

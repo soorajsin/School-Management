@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./Mix.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import backendURl from "../config";
 
 const Register = () => {
+  const history = useNavigate();
   const api = backendURl.url;
 
   const [sendData, setSendData] = useState({
@@ -44,7 +45,16 @@ const Register = () => {
       });
 
       const res = await data.json();
-      console.log(res);
+      // console.log(res);
+
+      if (res.status === 201) {
+        console.log(res);
+        history("/choose");
+      } else if (res.status === 202) {
+        alert("Email not found");
+      } else if (res.status === 203) {
+        alert("Password not matched ");
+      }
     }
   };
 

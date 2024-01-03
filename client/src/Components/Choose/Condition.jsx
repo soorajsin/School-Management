@@ -2,7 +2,13 @@ import React from 'react'
 
 const Condition = () => {
   return (
-    <div>Condition</div>
+    <>
+      <div className="choose">
+        <div className="chooseContainer">
+          
+        </div>
+      </div>
+    </>
   )
 }
 

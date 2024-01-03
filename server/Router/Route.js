@@ -97,14 +97,36 @@ router.post("/login", async (req, res) => {
                                                   // console.log("done");
 
                                                   //generate the token
-                                                  const token = await findUser.generateTOken();
+                                                  const token = await findUser.generateToken();
+                                                  // console.log(token);
+
+
+                                                  //generate cookie
+                                                  res.cookie("auth_token", token, {
+                                                            httpOnly: true, // Ensures the cookie is only accessible on the server
+                                                            secure: true, // Ensures the cookie is only sent over HTTPS (in a production environment)
+                                                            maxAge: 24 * 60 * 60 * 1000, // 24 hours in milliseconds (adjust as needed)
+                                                  });
+
+                                                  const result = {
+                                                            findUser,
+                                                            token
+                                                  };
+
+
+                                                  res.status(201).json({
+                                                            status: 201,
+                                                            msg: "user successfully login",
+                                                            userData: result
+                                                  })
                                         }
                               }
                     }
 
           } catch (error) {
+                    // console.log(error);
                     res.status(400).json({
-                              msg: 'Network Connection Error'
+                              msg: 'Network Connection Error not login',
                     })
           }
 })
