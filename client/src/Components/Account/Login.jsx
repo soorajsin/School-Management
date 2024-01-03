@@ -49,6 +49,7 @@ const Register = () => {
 
       if (res.status === 201) {
         console.log(res);
+        localStorage.setItem("userDataToken", res.userData.token);
         history("/choose");
       } else if (res.status === 202) {
         alert("Email not found");

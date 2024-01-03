@@ -5,7 +5,7 @@ const Condition = () => {
     <>
       <div className="choose">
         <div className="chooseContainer">
-          
+          js
         </div>
       </div>
     </>
