@@ -13,4 +13,21 @@
           width: 1200px;
           margin: auto;
           display: flex;
+          justify-content: space-between;
+}
+
+.navbar .navContainer .tab {
+          margin-top: 10px;
+          cursor: pointer;
+}
+
+.navbar .navContainer .tab img {
+          width: 65px;
+          height: 55px;
+}
+
+.navbar .navContainer .tab .tabcontent {
+          text-decoration: none;
+          font-size: 30px;
+          color: #fff;
 }
