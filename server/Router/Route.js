@@ -2,6 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const userdb = require("../Model/Schema");
 const bcrypt = require("bcryptjs");
+const authenticateDatauser = require("../Middleware/Authenticate");
 
 
 router.post("/register", async (req, res) => {
@@ -127,6 +128,24 @@ router.post("/login", async (req, res) => {
                     // console.log(error);
                     res.status(400).json({
                               msg: 'Network Connection Error not login',
+                    })
+          }
+});
+
+
+
+router.get("/validator", authenticateDatauser, async (req, res) => {
+          // console.log("data");
+
+          if (req.getData) {
+                    res.status(201).json({
+                              msg: "User find successfully",
+                              status: 205,
+                              getData: req.getData
+                    })
+          } else {
+                    res.status(500).json({
+                              msg: "Token is invalid or expired"
                     })
           }
 })

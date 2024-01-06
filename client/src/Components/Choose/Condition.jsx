@@ -4,6 +4,15 @@ import { useNavigate } from "react-router-dom";
 
 const Condition = () => {
   const history = useNavigate();
+
+  const navigateStudent = () => {
+    history("/student");
+  };
+
+  const navigaetTeacher = () => {
+    history("/teacher");
+  };
+
   return (
     <>
       <div className="choose">
@@ -15,7 +24,7 @@ const Condition = () => {
                 alt="img"
               />
             </div>
-            <button onClick={history("/student")}>Student</button>
+            <button onClick={navigateStudent}>Student</button>
           </div>
           <div className="mixdata">
             <div className="imgdata">
@@ -24,7 +33,7 @@ const Condition = () => {
                 alt="img"
               />
             </div>
-            <button onClick={history("/teacher")}>Teacher</button>
+            <button onClick={navigaetTeacher}>Teacher</button>
           </div>
         </div>
       </div>

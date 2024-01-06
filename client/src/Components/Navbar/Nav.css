@@ -19,7 +19,16 @@
 .navbar .navContainer .tab {
           margin-top: 10px;
           cursor: pointer;
+          position: relative;
+          /* Added position relative */
 }
+
+.navbar .navContainer .tab .avatarChar {
+          color: red;
+          background-color: #fff;
+          font-size: 30px;
+}
+
 
 .navbar .navContainer .tab img {
           width: 65px;
@@ -30,4 +39,39 @@
           text-decoration: none;
           font-size: 30px;
           color: #fff;
+}
+
+.navbar .navContainer .tab .navcontainerShow {
+          position: absolute;
+          right: 0;
+          display: none;
+          /* Initially hide .navcontainerShow */
+          background-color: #fff;
+          padding: 10px;
+          padding: 20px;
+          border-radius: 10px;
+          top: 40px;
+          min-width: 300px;
+}
+
+.navbar .navContainer .tab:hover .navcontainerShow {
+          display: block;
+          /* Show .navcontainerShow when .tab is hovered */
+}
+
+.navbar .navContainer .tab .navcontainerShow .classHand .tabAvatar {
+          font-size: 30px;
+          padding: 20px;
+          background-color: rgb(236, 124, 124);
+          border-radius: 10px;
+          transition: 0.3s ease;
+          margin-bottom: 20px;
+          cursor: pointer;
+}
+
+.navbar .navContainer .tab .navcontainerShow .classHand .tabAvatar:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+          color: #fff;
+          font-size: 32px;
 }
