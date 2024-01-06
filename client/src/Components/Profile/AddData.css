@@ -1,0 +1,36 @@
+* {
+          margin: 0;
+          padding: 0;
+}
+
+.addData {
+          margin: auto;
+          width: 1200px;
+          background-color: #f5f5f5;
+}
+
+.addData .addDataContainer {
+          padding: 50px;
+          background-color: #fff;
+          border-radius: 10px;
+          margin-top: 50px;
+          margin-bottom: 50px;
+          transition: 0.3s ease;
+}
+
+.addData .addDataContainer:hover {
+          transform: scale(1.01);
+          box-shadow: 0 0 10px;
+}
+
+.addData .addDataContainer h1 {
+          color: #d43757;
+          transition: 0.3s ease;
+          margin-bottom: 50px;
+}
+
+.addData .addDataContainer h1:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          margin-left: 10px;
+}

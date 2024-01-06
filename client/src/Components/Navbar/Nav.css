@@ -75,3 +75,12 @@
           color: #fff;
           font-size: 32px;
 }
+
+.navbar .navContainer .tab .navcontainerShow .classHand .tabAvatar .tabAvatarNavlink {
+          text-decoration: none;
+          color: #000000;
+}
+
+.navbar .navContainer .tab .navcontainerShow .classHand .tabAvatar .tabAvatarNavlink:hover {
+          color: #fff;
+}

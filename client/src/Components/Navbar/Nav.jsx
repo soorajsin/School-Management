@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import "./Nav.css";
 import { NavLink } from "react-router-dom";
 import { Avatar } from "@mui/material";
 import urlData from "../config";
+import { contextNavigate } from "../Context/ContextProvider";
 
 const Nav = () => {
-  const [userData, setUserData] = useState();
+  const { userData, setUserData } = useContext(contextNavigate);
 
   const api = urlData.url;
   const navbarData = async () => {
@@ -64,11 +65,29 @@ const Nav = () => {
             </Avatar>
             <div className="navcontainerShow">
               <div className="classHand">
-                <div className="tabAvatar">Email</div>
-                <div className="tabAvatar">Home</div>
-                <div className="tabAvatar">Student</div>
-                <div className="tabAvatar">Teacher</div>
-                <div className="tabAvatar">Profile</div>
+                <div className="tabAvatar">
+                  {userData ? userData.getData.email : ""}
+                </div>
+                <div className="tabAvatar">
+                  <NavLink to={"/student"} className="tabAvatarNavlink">
+                    Home
+                  </NavLink>
+                </div>
+                <div className="tabAvatar">
+                  <NavLink to={"/student"} className="tabAvatarNavlink">
+                    Student
+                  </NavLink>
+                </div>
+                <div className="tabAvatar">
+                  <NavLink to={"/teacher"} className="tabAvatarNavlink">
+                    Teacher
+                  </NavLink>
+                </div>
+                <div className="tabAvatar">
+                  <NavLink to={"addData"} className="tabAvatarNavlink">
+                    Profile
+                  </NavLink>
+                </div>
                 <div className="tabAvatar">Log Out</div>
               </div>
             </div>
