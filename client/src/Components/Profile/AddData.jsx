@@ -1,24 +1,15 @@
-import React from 'react'
-import { useContext } from 'react'
-import { contextNavigate } from '../Context/ContextProvider'
+import React from "react";
+import { useContext } from "react";
+import { contextNavigate } from "../Context/ContextProvider";
 
 const AddData = () => {
+  const { userData } = useContext(contextNavigate);
 
-          const {userData}=useContext(contextNavigate);
+  if (userData) {
+    return <>{userData ? userData.getData.email : ""}</>;
+  } else {
+    return <div>Loading...</div>;
+  }
+};
 
-          if(!userData){
-                    return <>
-                              <h1>Please Login to add data</h1>
-                    </>
-          }else{
-                    return (
-    <>
-          sdk
-    </>
-  )
-          }
-
-
-}
-
-export default AddData
+export default AddData;
