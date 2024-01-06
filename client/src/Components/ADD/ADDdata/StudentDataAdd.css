@@ -1,0 +1,16 @@
+*{
+          margin: 0;
+          padding: 0;
+}
+
+.addstudent{
+          margin: auto;
+          width: 1200px;
+          background-color: red;
+}
+
+.addstudent .studentContainer{
+          margin-top: 200px;
+          font-size: 50px;
+          background-color: black;
+}
