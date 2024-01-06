@@ -20,7 +20,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/choose" element={<Condition />} />
           <Route path="/student" element={<Student />} />
-          <Route path="./teacher" element={<Teacher />} />
+          <Route path="/teacher" element={<Teacher />} />
           <Route path="/addData" element={<AddData />} />
           <Route path="/studentADD" element={<StudentDataAdd />} />
           <Route path="/teacherADD" element={<TeacherDataADD />} />

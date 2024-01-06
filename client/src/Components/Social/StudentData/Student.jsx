@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Student = () => {
   const history = useNavigate();
   const addToStudentData = () => {
-    history("./studentADD");
+    history("/studentADD");
   };
 
   return (
