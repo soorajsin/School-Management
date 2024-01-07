@@ -20,7 +20,6 @@
           margin-top: 10px;
           cursor: pointer;
           position: relative;
-          /* Added position relative */
 }
 
 .navbar .navContainer .tab .avatarChar {
@@ -39,13 +38,18 @@
           text-decoration: none;
           font-size: 30px;
           color: #fff;
+          transition: 0.3s ease-out;
+}
+
+.navbar .navContainer .tab .tabcontent:hover {
+          transform: scale(2.06);
+          text-shadow: 0 0 10px;
 }
 
 .navbar .navContainer .tab .navcontainerShow {
           position: absolute;
           right: 0;
           display: none;
-          /* Initially hide .navcontainerShow */
           background-color: #fff;
           padding: 10px;
           padding: 20px;

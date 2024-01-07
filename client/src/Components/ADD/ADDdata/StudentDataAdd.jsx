@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./StudentDataAdd.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import apiURL from "../../config";
 
 const StudentDataAdd = () => {
+  const history=useNavigate();
   const api = apiURL.url;
   const [sendData, setSendData] = useState([
     {
@@ -56,6 +57,7 @@ const StudentDataAdd = () => {
 
       if (res.status === 202) {
         console.log(res);
+        history("/student");
       } else {
         alert("Error in adding student");
       }

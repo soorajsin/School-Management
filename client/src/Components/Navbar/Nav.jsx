@@ -85,6 +85,11 @@ const Nav = () => {
             </NavLink>
           </div>
           <div className="tab">
+            <NavLink to={"/"} className={"tabcontent"}>
+              Login
+            </NavLink>
+          </div>
+          <div className="tab">
             <Avatar className="avatarChar">
               {" "}
               {userData ? userData.getData.email.charAt(0).toUpperCase() : ""}

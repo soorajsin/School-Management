@@ -43,7 +43,7 @@ const Student = () => {
         <div className="containerStudent">
           {userData && (
             <div className="addButton">
-              <button onClick={addToStudentData}>Add</button>
+              <button onClick={addToStudentData}>ADD</button>
             </div>
           )}
           <div className="show">

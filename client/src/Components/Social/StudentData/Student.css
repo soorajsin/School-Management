@@ -40,10 +40,9 @@
           background-color: #fff;
           border-radius: 10px;
           cursor: pointer;
-          display: flex;
-          flex-wrap: wrap;
           transition: 0.3s ease;
           position: relative;
+          word-wrap: break-word;
 }
 
 .StudentData .containerStudent .show .show-data:hover {
