@@ -41,6 +41,19 @@
           transition: 0.3s ease-out;
 }
 
+@media (max-width:767px) {
+          .navbar .navContainer {
+                    width: 680px;
+                    margin: auto;
+                    display: flex;
+                    justify-content: space-between;
+          }
+
+          .navbar .navContainer .tab .tabcontent {
+                    display: none;
+          }
+}
+
 .navbar .navContainer .tab .tabcontent:hover {
           transform: scale(2.06);
           text-shadow: 0 0 10px;
