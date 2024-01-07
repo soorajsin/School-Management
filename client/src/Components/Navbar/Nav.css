@@ -42,8 +42,14 @@
 }
 
 @media (max-width:767px) {
+          .navbar {
+                    width: 100%;
+                    height: 67px;
+                    background-color: #1976d2;
+          }
+
           .navbar .navContainer {
-                    width: 680px;
+                    width: 650px;
                     margin: auto;
                     display: flex;
                     justify-content: space-between;
@@ -53,6 +59,8 @@
                     display: none;
           }
 }
+
+
 
 .navbar .navContainer .tab .tabcontent:hover {
           transform: scale(2.06);

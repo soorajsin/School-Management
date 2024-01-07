@@ -123,6 +123,11 @@ const Nav = () => {
                         Profile
                       </NavLink>
                     </div>
+                    <div className="tabAvatar">
+                      <NavLink to={"/"} className="tabAvatarNavlink">
+                        Login
+                      </NavLink>
+                    </div>
                     <div className="tabAvatar" onClick={signOut}>
                       Log Out
                     </div>
