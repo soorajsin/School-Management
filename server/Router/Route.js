@@ -151,4 +151,98 @@ router.get("/validator", authenticateDatauser, async (req, res) => {
 })
 
 
+
+router.post("/addStudent", authenticateDatauser, async (req, res) => {
+          try {
+                    // console.log(req.body);
+                    const {
+                              sendData
+                    } = req.body;
+
+                    if (!sendData) {
+                              res.status(400).json({
+                                        msg: "Please provide data to add student"
+                              })
+                    } else {
+                              // console.log(sendData);
+
+                              const user = req.getData;
+
+                              if (!user) {
+                                        res.status(400).json({
+                                                  msg: "User not found"
+                                        })
+                              } else {
+                                        // console.log(user);
+
+                                        user.student.push(...sendData);
+
+                                        const updatedUser = await user.save();
+                                        // console.log(updatedUser);
+
+                                        res.status(201).json({
+                                                  msg: "student successfully added",
+                                                  status: 202,
+                                                  updatedUser: updatedUser
+                                        })
+                              }
+                    }
+          } catch (error) {
+                    res.status(400).json({
+                              msg: "add student failed"
+                    })
+          }
+})
+
+
+router.delete("/deletestudent", authenticateDatauser, async (req, res) => {
+          try {
+                    // console.log(req.body);
+
+                    const {
+                              studentId
+                    } = req.body;
+                    if (!studentId) {
+                              res.status(400).json({
+                                        msg: "please provide the id of the student you want to delete"
+                              })
+                    } else {
+                              const user = req.getData;
+
+                              if (!user) {
+                                        res.status(400).json({
+                                                  msg: "the token is invalid or has expired"
+                                        })
+                              } else {
+                                        // console.log(user);
+
+                                        const studentEntry = user.student.find((student) => student._id.toString() === studentId);
+
+                                        if (!studentEntry) {
+                                                  res.status(400).json({
+                                                            msg: "wrong student id"
+                                                  })
+                                        } else {
+                                                  // console.log(studentEntry);
+
+                                                  user.student = user.student.filter((student) => student._id.toString() !== studentId);
+
+                                                  const updatedUser = await user.save();
+
+                                                  res.status(201).json({
+                                                            status: 203,
+                                                            msg: "delete successfully done",
+                                                            updatedUser: updatedUser
+                                                  })
+                                        }
+                              }
+                    }
+          } catch (error) {
+                    res.status(400).json({
+                              msg: "failed not delete student data"
+                    })
+          }
+})
+
+
 module.exports = router;

@@ -6,7 +6,7 @@
 .StudentData {
           margin: auto;
           width: 1200px;
-          background-color: rgb(228, 138, 138);
+          /* background-color: rgb(228, 138, 138); */
 }
 
 .StudentData .containerStudent {
@@ -28,4 +28,51 @@
 .StudentData .containerStudent .addButton button:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
+}
+
+.StudentData .containerStudent .show {
+          margin-top: 30px;
+}
+
+.StudentData .containerStudent .show .show-data {
+          margin-bottom: 30px;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 10px;
+          cursor: pointer;
+          display: flex;
+          flex-wrap: wrap;
+          transition: 0.3s ease;
+          position: relative;
+}
+
+.StudentData .containerStudent .show .show-data:hover {
+          transform: scale(1.01);
+          box-shadow: 0 0 10px;
+}
+
+.StudentData .containerStudent .show .show-data p {
+          margin-right: 100px;
+          font-size: 30px;
+          margin-bottom: 30px;
+          cursor: pointer;
+}
+
+.StudentData .containerStudent .show .show-data .deletestudet i {
+          position: absolute;
+          right: 30px;
+          bottom: 20px;
+          font-size: 30px;
+          transition: 0.3s ease;
+          display: none;
+}
+
+.StudentData .containerStudent .show .show-data .deletestudet i:hover {
+          color: #ff6b6b;
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+}
+
+.StudentData .containerStudent .show .show-data:hover i {
+          display: block;
 }

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./StudentDataAdd.css";
 import { NavLink } from "react-router-dom";
+import apiURL from "../../config";
 
 const StudentDataAdd = () => {
+  const api = apiURL.url;
   const [sendData, setSendData] = useState([
     {
       name: "",
@@ -22,6 +24,43 @@ const StudentDataAdd = () => {
     setSendData([...sendData, newForm]);
   };
   console.log(sendData);
+
+  const submitaddStudent = async () => {
+    const emptyFiel = sendData.some(
+      (form) =>
+        form.name === "" ||
+        form.email === "" ||
+        form.dob === "" ||
+        form.description === ""
+    );
+
+    if (emptyFiel) {
+      alert("Please fill all fields");
+    } else {
+      console.log("done ");
+
+      const token = await localStorage.getItem("userDataToken");
+      // console.log(token);
+
+      const data = await fetch(`${api}/addStudent`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify({ sendData }),
+      });
+
+      const res = await data.json();
+      // console.log(res);
+
+      if (res.status === 202) {
+        console.log(res);
+      } else {
+        alert("Error in adding student");
+      }
+    }
+  };
 
   return (
     <>
@@ -97,7 +136,7 @@ const StudentDataAdd = () => {
           </div>
           <br />
           <div className="addDataOFStudent">
-            <button>Submit</button>
+            <button onClick={submitaddStudent}>Submit</button>
           </div>
           <br />
           <div className="addDataOFStudent">

@@ -35,6 +35,20 @@ const userSchema = mongoose.Schema({
                               type: String,
                               required: true
                     }
+          }],
+          student: [{
+                    name: {
+                              type: String
+                    },
+                    email: {
+                              type: String
+                    },
+                    dob: {
+                              type: Date
+                    },
+                    description: {
+                              type: String
+                    }
           }]
 });
 
