@@ -18,17 +18,7 @@
           transition: 0.3s ease;
 }
 
-@media (max-width:767px) {
 
-          .register .container {
-                    width: 500px;
-                    margin: auto;
-                    background-color: #fff;
-                    border-radius: 10px;
-                    padding: 50px;
-                    transition: 0.3s ease;
-          }
-}
 
 .register .container:hover {
           transform: scale(1.06);
@@ -108,4 +98,109 @@
           transform: scale(1.06);
           text-shadow: 0 0 10px;
           color: #d43757;
+}
+
+
+@media (max-width:767px) {
+          * {
+                    margin: 0;
+                    padding: 0;
+          }
+
+          .register {
+                    /* max-width: 1200px; */
+                    /* background-color: red; */
+                    margin: 100px auto;
+          }
+
+          .register .container {
+                    width: 500px;
+                    margin: auto;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    padding: 50px;
+                    transition: 0.3s ease;
+          }
+
+
+
+          .register .container:hover {
+                    transform: scale(1.06);
+                    box-shadow: 0 0 10px;
+          }
+
+          .register .container h1 {
+                    word-spacing: 60px;
+                    font-size: 30px;
+                    margin-left: 30px;
+                    transition: 0.3s ease;
+                    margin-bottom: 40px;
+          }
+
+          .register .container:hover h1 {
+                    color: #d43757;
+                    text-shadow: 0 0 10px;
+          }
+
+          .register .container .h1handle {
+                    word-spacing: 75px;
+          }
+
+          .register .container .boxregister {
+                    margin-left: 30px;
+                    margin-bottom: 20px;
+          }
+
+          .register .container .boxregister label {
+                    font-size: 30px;
+          }
+
+          .register .container .boxregister input {
+                    font-size: 30px;
+                    height: 40px;
+                    width: 400px;
+                    border-radius: 10px;
+                    padding-left: 10px;
+                    border-top: none;
+                    background-color: #f5f5f5;
+          }
+
+          .register .container .boxregister input:focus {
+                    background-color: #fff;
+          }
+
+          .register .container .boxregister button {
+                    width: 410px;
+                    height: 40px;
+                    font-size: 30px;
+                    border-radius: 10px;
+                    border: none;
+                    background-color: #d43757;
+                    color: #fff;
+                    cursor: pointer;
+                    transition: 0.3s ease;
+          }
+
+          .register .container .boxregister button:hover {
+                    box-shadow: 0 0 10px;
+                    transform: scale(1.06);
+                    width: 400px;
+                    margin-left: 10px;
+          }
+
+          .register .container .boxregister p {
+                    font-size: 20px;
+                    word-spacing: 2px;
+          }
+
+          .register .container .boxregister p .registerlink {
+                    font-size: 20px;
+                    transition: 0.3s ease;
+          }
+
+          .register .container .boxregister p .registerlink:hover {
+                    transform: scale(1.06);
+                    text-shadow: 0 0 10px;
+                    color: #d43757;
+          }
 }
