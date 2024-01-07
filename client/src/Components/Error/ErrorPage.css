@@ -1,0 +1,40 @@
+* {
+          margin: 0;
+          padding: 0;
+}
+
+.error {
+          width: 1200px;
+          margin: auto;
+}
+
+.error .containerError {
+          /* background-color: red; */
+          padding: 20px;
+          text-align: center;
+          margin: auto;
+}
+
+
+.error .containerError h1 {
+          margin-bottom: 30px;
+          word-spacing: 30px;
+          transition: 0.3s ease;
+}
+
+.error .containerError h1:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          margin-left: 10px;
+          color: rgb(211, 65, 65);
+}
+
+.error .containerError img {
+          width: 450px;
+          border-radius: 10px;
+          margin-bottom: 20px;
+}
+
+.error .containerError p {
+          font-size: 30px;
+}

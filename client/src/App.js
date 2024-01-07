@@ -9,6 +9,7 @@ import AddData from "./Components/Profile/AddData";
 import Teacher from "./Components/Social/TeacherData/Teacher";
 import StudentDataAdd from "./Components/ADD/ADDdata/StudentDataAdd";
 import TeacherDataADD from "./Components/ADD/AddTeacher/TeacherDataADD";
+import Errorpage from "./Components/Error/Errorpage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/addData" element={<AddData />} />
           <Route path="/studentADD" element={<StudentDataAdd />} />
           <Route path="/teacherADD" element={<TeacherDataADD />} />
+          <Route path="*" element={<Errorpage />} />
         </Routes>
       </BrowserRouter>
     </>
