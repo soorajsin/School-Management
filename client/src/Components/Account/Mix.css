@@ -101,13 +101,13 @@
 }
 
 
-@media (max-width:600px) {
+@media (max-width:500px) {
           .register .container {
-                    width: 350px;
-                    margin: auto;
+                    width: 300px;
+                    margin: 100px auto;
                     background-color: #fff;
                     border-radius: 10px;
-                    padding: 50px;
+                    padding: 30px;
                     transition: 0.3s ease;
           }
 
@@ -118,7 +118,7 @@
           }
 
           .register .container h1 {
-                    word-spacing: 15px;
+                    word-spacing: 0px;
                     font-size: 30px;
                     margin-left: 0px;
                     transition: 0.3s ease;
@@ -131,7 +131,7 @@
           }
 
           .register .container .h1handle {
-                    word-spacing: 25px;
+                    word-spacing: 20px;
           }
 
           .register .container .boxregister {
@@ -146,7 +146,7 @@
           .register .container .boxregister input {
                     font-size: 30px;
                     height: 40px;
-                    width: 300px;
+                    width: 280px;
                     border-radius: 10px;
                     padding-left: 10px;
                     border-top: none;
@@ -158,7 +158,7 @@
           }
 
           .register .container .boxregister button {
-                    width: 310px;
+                    width: 290px;
                     height: 40px;
                     font-size: 30px;
                     border-radius: 10px;
@@ -172,7 +172,7 @@
           .register .container .boxregister button:hover {
                     box-shadow: 0 0 10px;
                     transform: scale(1.06);
-                    width: 300px;
+                    width: 280px;
                     margin-left: 10px;
           }
 
