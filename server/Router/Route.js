@@ -245,4 +245,44 @@ router.delete("/deletestudent", authenticateDatauser, async (req, res) => {
 })
 
 
+router.post("/addTeacher", authenticateDatauser, async (req, res) => {
+          try {
+                    // console.log(req.body);
+                    const {
+                              sendData
+                    } = req.body;
+
+                    if (!sendData) {
+                              res.status(400).json({
+                                        msg: "data are missing in the request body"
+                              })
+                    } else {
+                              const user = req.getData;
+
+                              if (!user) {
+                                        res.status(400).json({
+                                                  msg: "user not found"
+                                        })
+                              } else {
+                                        // console.log(user);
+                                        user.teacher.push(...sendData);
+
+                                        const updatedUser = await user.save();
+                                        // console.log(updatedUser);
+
+                                        res.status(201).json({
+                                                  status: 202,
+                                                  msg: "data added to teacher array successfully",
+                                                  data: updatedUser,
+                                        })
+                              }
+                    }
+          } catch (error) {
+                    res.status(400).json({
+                              msg: "Error teacher"
+                    })
+          }
+})
+
+
 module.exports = router;

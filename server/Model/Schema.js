@@ -49,6 +49,20 @@ const userSchema = mongoose.Schema({
                     description: {
                               type: String
                     }
+          }],
+          teacher: [{
+                    name: {
+                              type: String
+                    },
+                    email: {
+                              type: String
+                    },
+                    dob: {
+                              type: Date
+                    },
+                    description: {
+                              type: String
+                    }
           }]
 });
 

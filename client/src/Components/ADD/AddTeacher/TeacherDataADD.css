@@ -2,3 +2,99 @@
           margin: 0;
           padding: 0;
 }
+
+.teacherADD {
+          width: 1200px;
+          margin: auto;
+          background-color: red;
+}
+
+.teacherADD .teacherContainer {
+          padding: 20px;
+          width: 700px;
+          margin: auto;
+          background-color: #fff;
+          margin-top: 50px;
+          margin-bottom: 50px;
+          border-radius: 10px;
+          transition: 0.3s ease;
+}
+
+.teacherADD .teacherContainer:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+}
+
+.teacherADD .teacherContainer h1 {
+          margin-left: 100px;
+          margin-bottom: 30px;
+          margin-top: 30px;
+          transition: 0.3s ease;
+          word-spacing: 30px;
+}
+
+.teacherADD .teacherContainer h1:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          color: rgb(214, 66, 66);
+          padding-left: 10px;
+}
+
+.teacherADD .teacherContainer .form {
+          margin-left: 100px;
+          margin-bottom: 20px;
+}
+
+.teacherADD .teacherContainer .form label {
+          font-size: 30px;
+}
+
+
+.teacherADD .teacherContainer .form input {
+          font-size: 30px;
+          border-top: none;
+          border-radius: 10px;
+          padding-left: 10px;
+          background-color: #f5f5f5;
+          width: 450px;
+          height: 40px;
+}
+
+.teacherADD .teacherContainer .form input:focus {
+          background-color: #fff;
+}
+
+.teacherADD .teacherContainer .form textarea {
+          font-size: 30px;
+          border-top: none;
+          border-radius: 10px;
+          padding-left: 10px;
+          background-color: #f5f5f5;
+          width: 450px;
+}
+
+.teacherADD .teacherContainer .form textarea:focus {
+          background-color: #fff;
+}
+
+.teacherADD .teacherContainer .form button {
+          font-size: 30px;
+          border: none;
+          border-radius: 10px;
+          background-color: #1976d2;
+          width: 450px;
+          color: #fff;
+          height: 40px;
+          transition: 0.3s ease;
+}
+
+.teacherADD .teacherContainer .form button:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+          cursor: pointer;
+}
+
+.teacherADD .teacherContainer .form p {
+          font-size: 20px;
+          margin-bottom: 30px;
+}
