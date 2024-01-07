@@ -151,6 +151,37 @@ router.get("/validator", authenticateDatauser, async (req, res) => {
 })
 
 
+router.post("/signOut", authenticateDatauser, async (req, rs) => {
+          try {
+                    const user = req.getData;
+
+                    if (!user) {
+                              res.status(400).json({
+                                        msg: "No User Found in the database!"
+                              })
+                    } else {
+                              // console.log(user);
+
+                              const tokenRemove = user.tokens.map((token) => token._id);
+
+                              user.tokens = [];
+                              const updatedUser = await user.save();
+                              // console.log(updatedUser);
+
+                              res.status(201).json({
+                                        status: 204,
+                                        msg: 'Sign Out Successfully',
+                                        data: updatedUser
+                              })
+                    }
+          } catch (error) {
+                    res.status(500).json({
+                              msg: "Token not found"
+                    })
+          }
+})
+
+
 
 router.post("/addStudent", authenticateDatauser, async (req, res) => {
           try {
@@ -280,6 +311,56 @@ router.post("/addTeacher", authenticateDatauser, async (req, res) => {
           } catch (error) {
                     res.status(400).json({
                               msg: "Error teacher"
+                    })
+          }
+})
+
+
+router.delete("/deleteTeacher", authenticateDatauser, async (req, res) => {
+          try {
+                    // console.log(req.body);
+                    const {
+                              teacherId
+                    } = req.body;
+
+                    if (!teacherId) {
+                              res.status(400).json({
+                                        msg: "teacher id is required"
+                              })
+                    } else {
+                              const user = req.getData;
+
+                              if (!user) {
+                                        res.status(400).json({
+                                                  msg: "Invalid token"
+                                        })
+                              } else {
+                                        // console.log(user);
+
+                                        const entryField = user.teacher.find((teacher) => teacher._id.toString() === teacherId);
+
+                                        if (!entryField) {
+                                                  res.status(400).json({
+                                                            msg: "field not found in the request body"
+                                                  })
+                                        } else {
+                                                  // console.log(entryField);
+
+                                                  user.teacher = user.teacher.filter((teacher) => teacher._id.toString() !== teacherId);
+
+                                                  const updatedUser = await user.save();
+
+                                                  res.status(201).json({
+                                                            status: 203,
+                                                            msg: "delete successfully",
+                                                            data: updatedUser
+                                                  })
+                                        }
+                              }
+                    }
+          } catch (error) {
+                    res.status(400).json({
+                              msg: "error failed teacher"
                     })
           }
 })

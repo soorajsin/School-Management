@@ -1,11 +1,12 @@
 import React, { useContext, useEffect } from "react";
 import "./Nav.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Avatar } from "@mui/material";
 import urlData from "../config";
 import { contextNavigate } from "../Context/ContextProvider";
 
 const Nav = () => {
+  const history = useNavigate();
   const { userData, setUserData } = useContext(contextNavigate);
 
   const api = urlData.url;
@@ -35,6 +36,31 @@ const Nav = () => {
   useEffect(() => {
     navbarData();
   });
+
+  const signOut = async () => {
+    const token = await localStorage.getItem("userDataToken");
+    // console.log(token);
+
+    const data = await fetch(`${api}/signOut`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+    });
+
+    const res = await data.json();
+    // console.log(res);
+
+    if (res.status === 204) {
+      console.log(res);
+      localStorage.removeItem("userDataToken");
+      history("/");
+      window.location.reload();
+    } else {
+      alert("Error signing out");
+    }
+  };
 
   return (
     <>
@@ -88,7 +114,9 @@ const Nav = () => {
                     Profile
                   </NavLink>
                 </div>
-                <div className="tabAvatar">Log Out</div>
+                <div className="tabAvatar" onClick={signOut}>
+                  Log Out
+                </div>
               </div>
             </div>
           </div>

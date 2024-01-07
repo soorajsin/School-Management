@@ -10,7 +10,7 @@
 
 .teacher .conatinerofTeacher {
           padding: 20px;
-          background-color: rgb(202, 133, 133);
+          /* background-color: rgb(202, 133, 133); */
 }
 
 
@@ -29,4 +29,48 @@
 .teacher .conatinerofTeacher button:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
+}
+
+.teacher .conatinerofTeacher .show {
+          margin-bottom: 50px;
+}
+
+.teacher .conatinerofTeacher .show .show-data-teacher {
+          margin-bottom: 30px;
+          background-color: #fff;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: 0.3s ease;
+          position: relative;
+}
+
+.teacher .conatinerofTeacher .show .show-data-teacher p {
+          padding: 20px;
+          font-size: 30px;
+          cursor: pointer;
+}
+
+.teacher .conatinerofTeacher .show .show-data-teacher:hover {
+          transform: scale(1.01);
+          box-shadow: 0 0 10px;
+}
+
+.teacher .conatinerofTeacher .show .show-data-teacher .deleteteacher i {
+          position: absolute;
+          right: 30px;
+          bottom: 20px;
+          font-size: 30px;
+          cursor: pointer;
+          transition: 0.3s ease;
+          display: none;
+}
+
+.teacher .conatinerofTeacher .show .show-data-teacher .deleteteacher i:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          color: rgb(209, 52, 52);
+}
+
+.teacher .conatinerofTeacher .show .show-data-teacher:hover i {
+          display: block;
 }
