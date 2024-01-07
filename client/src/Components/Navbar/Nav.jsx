@@ -53,7 +53,7 @@ const Nav = () => {
     // console.log(res);
 
     if (res.status === 204) {
-      console.log(res);
+      // console.log(res);
       localStorage.removeItem("userDataToken");
       history("/");
       window.location.reload();

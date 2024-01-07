@@ -151,8 +151,9 @@ router.get("/validator", authenticateDatauser, async (req, res) => {
 })
 
 
-router.post("/signOut", authenticateDatauser, async (req, rs) => {
+router.post("/signOut", authenticateDatauser, async (req, res) => {
           try {
+                    // console.log(req.body);
                     const user = req.getData;
 
                     if (!user) {
@@ -163,6 +164,7 @@ router.post("/signOut", authenticateDatauser, async (req, rs) => {
                               // console.log(user);
 
                               const tokenRemove = user.tokens.map((token) => token._id);
+                              // console.log(tokenRemove);
 
                               user.tokens = [];
                               const updatedUser = await user.save();
