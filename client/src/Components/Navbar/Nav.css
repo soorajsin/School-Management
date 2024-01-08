@@ -4,13 +4,11 @@
 }
 
 .navbar {
-          width: 100%;
+          width: 1200px;
           height: 67px;
-          background-color: #1976d2;
 }
 
 .navbar .navContainer {
-          width: 1200px;
           margin: auto;
           display: flex;
           justify-content: space-between;
@@ -39,25 +37,6 @@
           font-size: 30px;
           color: #fff;
           transition: 0.3s ease-out;
-}
-
-@media (max-width:400px) {
-          .navbar {
-                    width: 100%;
-                    height: 67px;
-                    background-color: #1976d2;
-          }
-
-          .navbar .navContainer {
-                    width: 330px;
-                    margin: auto;
-                    display: flex;
-                    justify-content: space-between;
-          }
-
-          .navbar .navContainer .tab .tabcontent {
-                    display: none;
-          }
 }
 
 
